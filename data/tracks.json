@@ -1,16 +1,16 @@
 [
   {
-    "id": "clearer-strong-bass-v2",
-    "title": "Clearer Strong Bass V2",
+    "id": "out-of-control",
+    "title": "Out of Control",
     "artist": "FissaFissa Out of Control",
-    "source": "Local AI-assisted audio",
-    "status": "Live demo track",
+    "source": "FissaFissa Core",
+    "status": "Live track",
     "mood": "High Energy / Operator Bass",
     "style": "AI Bass / Electro / Dancefloor",
     "cover": "assets/logo/ffooc-logo-splatter.jpg",
-    "audio": "assets/tracks/clearer_strong_bass_v2.mp3",
+    "audio": "assets/tracks/out_of_control.mp3",
     "certificate": "",
-    "description": "47 Sekunden klare Bass-Energie fuer die Prompt Machine. Komprimiert als MP3, mit fertigem FissaFissa-Branding live gestellt.",
+    "description": "Der echte FissaFissa-Track fuer die Prompt Machine. Bass, Chaos und Operator Energy als Live-Audio.",
     "aiDisclosure": true,
     "rightsGate": "LOCAL"
   }

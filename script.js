@@ -85,12 +85,13 @@ function spinSlotMachine() {
   const copyBtn = document.getElementById('copyBtn');
   const deleteBtn = document.getElementById('deleteBtn');
   const slots = [document.getElementById('slot1'), document.getElementById('slot2'), document.getElementById('slot3')];
+  const slotCards = slots.map(slot => slot.closest('.slot'));
 
   leverBtn.disabled = true;
   copyBtn.disabled = true;
   deleteBtn.disabled = true;
   outputContent.innerHTML = '<p class="output-placeholder">Machine spinning...</p>';
-  slots.forEach(slot => slot.classList.add('spinning'));
+  slotCards.forEach(slot => slot.classList.add('spinning'));
 
   const slotValues = [
     ['AI','IMG','PICT','VIZ','ART','RND'],
@@ -112,7 +113,7 @@ function spinSlotMachine() {
 
     if (elapsed >= spinDuration) {
       clearInterval(spinInterval);
-      slots.forEach(slot => slot.classList.remove('spinning'));
+      slotCards.forEach(slot => slot.classList.remove('spinning'));
 
       const finalPrompt = getRandomPrompt();
       if (finalPrompt) {
@@ -120,15 +121,15 @@ function spinSlotMachine() {
         const type = (finalPrompt.type || '').toLowerCase();
 
         if (type.includes('picture')) {
-          slots[0].textContent = 'PICT';
-          slots[1].textContent = 'VIZ';
+          slots[0].textContent = 'PICTURE';
+          slots[1].textContent = 'VISUAL';
           slots[2].textContent = 'ART';
         } else if (type.includes('mureka') || type.includes('music')) {
-          slots[0].textContent = 'SONG';
+          slots[0].textContent = 'MUREKA';
           slots[1].textContent = 'BASS';
-          slots[2].textContent = 'BEAT';
+          slots[2].textContent = 'TRACK';
         } else {
-          slots[0].textContent = 'CODE';
+          slots[0].textContent = 'CRAZY';
           slots[1].textContent = 'PROMPT';
           slots[2].textContent = 'WILD';
         }
@@ -244,6 +245,7 @@ function initializeLever() {
 
 function renderTracks() {
   const tracksContainer = document.getElementById('tracksContainer');
+  if (!tracksContainer) return;
   tracksContainer.innerHTML = '';
 
   if (!state.tracksData.length) {
@@ -291,6 +293,7 @@ function createTrackCard(track) {
 
 function renderVisuals() {
   const visualGrid = document.getElementById('visualGrid');
+  if (!visualGrid) return;
   visualGrid.innerHTML = '';
 
   if (!state.visualsData.length) {
