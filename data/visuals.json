@@ -1,0 +1,50 @@
+[
+  {
+    "id": "visual-01",
+    "title": "Operator Bass Core",
+    "world": "Prompt Machine",
+    "style": "Neon Device",
+    "image": "assets/visuals/operator-bass-core.webp",
+    "description": "Neon-gruener Maschinenkern als erstes Live-Visual."
+  },
+  {
+    "id": "visual-02",
+    "title": "AI Logistics Lab",
+    "world": "Process AI",
+    "style": "Infographic",
+    "image": "",
+    "description": "Prozess, Robotik, Warehouse, AI."
+  },
+  {
+    "id": "visual-03",
+    "title": "Cyber Angel",
+    "world": "Cyber Angel Archive",
+    "style": "Cinematic",
+    "image": "",
+    "description": "Golden cyber form, AI mythos."
+  },
+  {
+    "id": "visual-04",
+    "title": "Dark Glitch",
+    "world": "Dark Operator Zone",
+    "style": "Glitch Portrait",
+    "image": "",
+    "description": "Dunkles Operator-Portrait mit Realweltbruch."
+  },
+  {
+    "id": "visual-05",
+    "title": "Cyber Surf",
+    "world": "Fantasy Apocalypse",
+    "style": "Surreal",
+    "image": "",
+    "description": "Toxic wave, AI chaos, visual drop."
+  },
+  {
+    "id": "visual-06",
+    "title": "Glitch Meme",
+    "world": "Glitch Reality",
+    "style": "Meme Visual",
+    "image": "",
+    "description": "Humorvoller Glitch-Abriss."
+  }
+]

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FissaFissa Out of Control — The Prompt Machine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="scanlines"></div>
+
+  <button class="hamburger" id="hamburgerBtn" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenuBtn">×</button>
+    <a class="menu-link" href="#machine">Prompt Machine</a>
+    <a class="menu-link" href="#music">Music AI Lab</a>
+    <a class="menu-link" href="#visuals">Visual Worlds</a>
+    <a class="menu-link" href="#rights">License / Rights</a>
+    <a class="menu-link" href="#about">About</a>
+  </nav>
+
+  <header class="topbar">
+    <div class="brand-lockup">
+      <div class="logo-fallback">FF<br>OOC</div>
+      <div>
+        <p class="eyebrow">AI MUSIC · VISUAL WORLDS · CONTROLLED CHAOS</p>
+        <h1>FissaFissa Out of Control</h1>
+        <h2>The Prompt Machine</h2>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero-panel" id="machine">
+      <div class="intro-card">
+        <p class="tag">NO INPUT · NO SIGNUP · NO BACKEND</p>
+        <h3>Pull the lever.<br>Get Picture, Mureka or Crazy Prompt.</h3>
+        <p>Eine Slotmachine für kreative KI-Impulse. Du gibst nichts ein. Du ziehst. Du bekommst einen Prompt. Dann: Copy oder Delete.</p>
+      </div>
+
+      <section class="machine-card">
+        <div class="machine-head">
+          <span class="machine-label">THE PROMPT MACHINE</span>
+          <span class="machine-status">ONLINE</span>
+        </div>
+
+        <div class="slot-machine">
+          <div class="slot" id="slot1">PICT</div>
+          <div class="slot" id="slot2">MUREKA</div>
+          <div class="slot" id="slot3">CRAZY</div>
+        </div>
+
+        <button class="lever-btn" id="leverBtn">
+          <span class="lever-icon">▼</span>
+          PULL LEVER
+        </button>
+
+        <div class="output-window">
+          <div class="output-title">OUTPUT WINDOW</div>
+          <div class="output-content" id="outputContent">
+            <p class="output-placeholder">Pull the lever to generate...</p>
+          </div>
+          <div class="output-actions">
+            <button class="action-btn" id="copyBtn" disabled>⧉ COPY</button>
+            <button class="action-btn danger" id="deleteBtn" disabled>× DELETE</button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <aside class="music-panel" id="music">
+      <div class="section-header">
+        <p class="eyebrow">MUREKA TRACKS</p>
+        <h3>Music AI Lab</h3>
+      </div>
+      <div class="tracks-container" id="tracksContainer"></div>
+    </aside>
+  </main>
+
+  <section class="visuals-section" id="visuals">
+    <div class="section-header wide">
+      <p class="eyebrow">AI-GENERATED VISUALS</p>
+      <h3>Visual Worlds</h3>
+      <p class="section-copy">Fortlaufende Bildwelten aus eigenen KI-Visuals. Kein Voting, kein Login, keine Nutzeruploads.</p>
+    </div>
+    <div class="visual-grid" id="visualGrid"></div>
+  </section>
+
+  <section class="info-strip" id="about">
+    <article>
+      <h4>What is this?</h4>
+      <p>FissaFissa Out of Control verbindet KI-generierte Tracks, Visuals und eine Prompt-Slotmachine zu einer einfachen, lauten Website.</p>
+    </article>
+    <article>
+      <h4>How it works</h4>
+      <p>JSON-Daten steuern Prompts, Tracks und Visuals. Keine Datenbank. Kein Login. Kein User-Input.</p>
+    </article>
+    <article id="rights">
+      <h4>Rights / License</h4>
+      <p>Tracks werden als AI-generated markiert. Wenn Zertifikate vorhanden sind, werden sie direkt an der Track-Karte verlinkt.</p>
+    </article>
+  </section>
+
+  <footer class="footer">
+    <span>© 2026 FissaFissa Out of Control</span>
+    <span>AI-generated / AI-assisted content. Mensch bleibt Owner. KI bleibt Werkzeug.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
