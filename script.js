@@ -3,7 +3,14 @@ const state = {
   currentPrompt: null,
   promptsData: [],
   tracksData: [],
-  visualsData: []
+  visualsData: [],
+  stats: {
+    picture: 12,
+    mureka: 7,
+    crazy: 19,
+    chaos: 87,
+    last: "MUREKA"
+  }
 };
 
 async function loadJson(path, fallback) {
@@ -127,6 +134,7 @@ function spinSlotMachine() {
         }
 
         displayPrompt(finalPrompt);
+        recordPull(finalPrompt);
         copyBtn.disabled = false;
         deleteBtn.disabled = false;
         animateOutputWindow();
@@ -156,10 +164,45 @@ function displayPrompt(prompt) {
 
   outputContent.innerHTML = `
     <p>${escapeHtml(promptText)}</p>
-    <p style="margin-top:12px;color:var(--neon-cyan);font-size:12px;text-transform:uppercase;letter-spacing:.12em;">
+    <p class="output-type">
       ${escapeHtml(promptType)}
     </p>
   `;
+}
+
+function getPromptBucket(prompt) {
+  const type = `${prompt.type || ''} ${prompt.category || ''}`.toLowerCase();
+  if (type.includes('mureka') || type.includes('music')) return 'mureka';
+  if (type.includes('picture') || type.includes('image') || type.includes('visual')) return 'picture';
+  return 'crazy';
+}
+
+function recordPull(prompt) {
+  const bucket = getPromptBucket(prompt);
+  state.stats[bucket] += 1;
+  state.stats.last = bucket.toUpperCase();
+  state.stats.chaos = Math.min(99, 72 + Math.floor(Math.random() * 28));
+  updateControlPanel();
+}
+
+function updateControlPanel() {
+  const lastPull = document.getElementById('lastPull');
+  const chaosValue = document.getElementById('chaosValue');
+  const pictureDrops = document.getElementById('pictureDrops');
+  const murekaDrops = document.getElementById('murekaDrops');
+  const crazyDrops = document.getElementById('crazyDrops');
+  const chaosBars = document.querySelectorAll('#chaosBars span');
+
+  if (lastPull) lastPull.textContent = state.stats.last;
+  if (chaosValue) chaosValue.textContent = `${state.stats.chaos}%`;
+  if (pictureDrops) pictureDrops.textContent = state.stats.picture;
+  if (murekaDrops) murekaDrops.textContent = state.stats.mureka;
+  if (crazyDrops) crazyDrops.textContent = state.stats.crazy;
+
+  const activeBars = Math.max(1, Math.round((state.stats.chaos / 100) * chaosBars.length));
+  chaosBars.forEach((bar, index) => {
+    bar.classList.toggle('active', index < activeBars);
+  });
 }
 
 function animateOutputWindow() {
@@ -219,7 +262,7 @@ function createTrackCard(track) {
     ? `<img src="${escapeHtml(track.cover)}" alt="${escapeHtml(track.title)}" class="track-cover">`
     : `<div class="track-cover"></div>`;
 
-  const audio = track.audio ? `<audio controls preload="none" src="${escapeHtml(track.audio)}"></audio>` : '';
+  const audio = track.audio ? `<audio controls preload="metadata" src="${escapeHtml(track.audio)}"></audio>` : '';
 
   const certificate = track.certificate
     ? `<a href="${escapeHtml(track.certificate)}" target="_blank" class="track-action-btn" rel="noopener">📜 License</a>`
@@ -236,6 +279,7 @@ function createTrackCard(track) {
       ${track.mood ? `<span class="track-mood">${escapeHtml(track.mood)}</span>` : ''}
       ${track.style ? `<span class="track-style">${escapeHtml(track.style)}</span>` : ''}
       ${track.source ? `<span class="track-source">${escapeHtml(track.source)}</span>` : ''}
+      ${track.status ? `<span class="track-source">${escapeHtml(track.status)}</span>` : ''}
     </div>
     ${track.description ? `<div class="track-description">${escapeHtml(track.description)}</div>` : ''}
     ${audio}
@@ -277,6 +321,7 @@ function initializeUI() {
   initializeMenu();
   initializeLever();
   initializeOutputButtons();
+  updateControlPanel();
   renderTracks();
   renderVisuals();
 }

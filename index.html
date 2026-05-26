@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FissaFissa Out of Control — The Prompt Machine</title>
+  <meta name="description" content="FissaFissa Out of Control: AI Music Lab, Bass, Chaos, Operator Energy and a live prompt slot machine." />
+  <meta name="theme-color" content="#050506" />
+  <meta property="og:title" content="FissaFissa Out of Control — The Prompt Machine" />
+  <meta property="og:description" content="AI Music Lab, Bass, Chaos, Operator Energy." />
+  <meta property="og:image" content="assets/logo/ffooc-logo-splatter.jpg" />
+  <link rel="icon" href="assets/logo/ffooc-icon.jpg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -15,99 +21,218 @@
   </button>
 
   <nav class="mobile-menu" id="mobileMenu">
-    <button class="close-menu" id="closeMenuBtn">×</button>
+    <button class="close-menu" id="closeMenuBtn" aria-label="Menü schließen">×</button>
+    <a class="menu-link" href="#home">Home</a>
     <a class="menu-link" href="#machine">Prompt Machine</a>
-    <a class="menu-link" href="#music">Music AI Lab</a>
+    <a class="menu-link" href="#music">Music Lab</a>
     <a class="menu-link" href="#visuals">Visual Worlds</a>
-    <a class="menu-link" href="#rights">License / Rights</a>
+    <a class="menu-link" href="#proof">Proof of Work</a>
     <a class="menu-link" href="#about">About</a>
   </nav>
 
-  <header class="topbar">
-    <div class="brand-lockup">
-      <div class="logo-fallback">FF<br>OOC</div>
-      <div>
-        <p class="eyebrow">AI MUSIC · VISUAL WORLDS · CONTROLLED CHAOS</p>
-        <h1>FissaFissa Out of Control</h1>
-        <h2>The Prompt Machine</h2>
-      </div>
+  <header class="site-nav" id="home">
+    <a class="nav-brand" href="#machine" aria-label="FissaFissa Out of Control">
+      <img src="assets/logo/ffooc-logo-splatter.jpg" alt="FissaFissa Out of Control" />
+    </a>
+    <nav class="desktop-nav" aria-label="Hauptnavigation">
+      <a href="#home">Home</a>
+      <a href="#machine">The Prompt Machine</a>
+      <a href="#music">Music Lab</a>
+      <a href="#visuals">Visual Worlds</a>
+      <a href="#proof">Proof of Work</a>
+      <a href="#about">About</a>
+    </nav>
+    <div class="nav-icons" aria-label="Community links">
+      <span>DC</span>
+      <span>IG</span>
     </div>
   </header>
 
-  <main class="page-shell">
-    <section class="hero-panel" id="machine">
-      <div class="intro-card">
-        <p class="tag">NO INPUT · NO SIGNUP · NO BACKEND</p>
-        <h3>Pull the lever.<br>Get Picture, Mureka or Crazy Prompt.</h3>
-        <p>Eine Slotmachine für kreative KI-Impulse. Du gibst nichts ein. Du ziehst. Du bekommst einen Prompt. Dann: Copy oder Delete.</p>
-      </div>
+  <main class="command-grid">
+    <section class="hero-copy" id="about">
+      <img class="hero-logo" src="assets/logo/ffooc-logo-clean.jpg" alt="FissaFissa Out of Control Logo" />
+      <p class="labline">AI Music & Visual Lab</p>
+      <h1>
+        <span>The Prompt</span>
+        <strong>Machine</strong>
+      </h1>
+      <p class="hero-punch">Pull the lever. Get Picture, Mureka or Crazy Prompt.</p>
+      <article class="micro-panel">
+        <h2>What is this?</h2>
+        <p>The Prompt Machine gives you random high-quality AI outputs. No input. No settings. Just pull, copy, create.</p>
+        <strong>Pure chaos. Pure creativity.</strong>
+      </article>
+    </section>
 
-      <section class="machine-card">
-        <div class="machine-head">
-          <span class="machine-label">THE PROMPT MACHINE</span>
-          <span class="machine-status">ONLINE</span>
-        </div>
-
+    <section class="machine-card" id="machine" aria-label="The Prompt Machine">
+      <div class="machine-frame">
+        <div class="machine-topline">↓ Pull the lever ↓</div>
         <div class="slot-machine">
-          <div class="slot" id="slot1">PICT</div>
-          <div class="slot" id="slot2">MUREKA</div>
-          <div class="slot" id="slot3">CRAZY</div>
+          <div class="slot">
+            <span class="slot-icon">▧</span>
+            <span id="slot1">PICTURE</span>
+          </div>
+          <div class="slot">
+            <span class="slot-icon">♪</span>
+            <span id="slot2">MUREKA</span>
+          </div>
+          <div class="slot">
+            <span class="slot-icon">☠</span>
+            <span id="slot3">CRAZY</span>
+          </div>
         </div>
 
         <button class="lever-btn" id="leverBtn">
           <span class="lever-icon">▼</span>
-          PULL LEVER
+          Pull the lever
         </button>
 
         <div class="output-window">
-          <div class="output-title">OUTPUT WINDOW</div>
+          <div class="output-title">Output Window</div>
           <div class="output-content" id="outputContent">
             <p class="output-placeholder">Pull the lever to generate...</p>
           </div>
           <div class="output-actions">
-            <button class="action-btn" id="copyBtn" disabled>⧉ COPY</button>
-            <button class="action-btn danger" id="deleteBtn" disabled>× DELETE</button>
+            <button class="action-btn" id="copyBtn" disabled>⧉ Copy</button>
+            <button class="action-btn danger" id="deleteBtn" disabled>× Delete</button>
           </div>
         </div>
-      </section>
+      </div>
+      <div class="lever-stick" aria-hidden="true">
+        <span></span>
+      </div>
     </section>
 
-    <aside class="music-panel" id="music">
-      <div class="section-header">
-        <p class="eyebrow">MUREKA TRACKS</p>
-        <h3>Music AI Lab</h3>
+    <aside class="control-panel" aria-label="AI Control Node">
+      <div class="node-card node-status">
+        <div>
+          <p class="eyebrow">AI Control Node</p>
+          <h2>Online <span></span></h2>
+        </div>
+        <img src="assets/logo/ffooc-icon.jpg" alt="" />
       </div>
-      <div class="tracks-container" id="tracksContainer"></div>
+
+      <div class="node-grid">
+        <div class="node-card">
+          <p>Chaos Level</p>
+          <strong id="chaosValue">87%</strong>
+          <div class="chaos-bars" id="chaosBars">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="node-card">
+          <p>Last Pull</p>
+          <strong id="lastPull">MUREKA</strong>
+          <span class="last-icon">♪</span>
+        </div>
+      </div>
+
+      <div class="node-card drops-card">
+        <p>Today's Drops</p>
+        <div class="drop-stats">
+          <span><small>Picture</small><strong id="pictureDrops">12</strong></span>
+          <span><small>Mureka</small><strong id="murekaDrops">7</strong></span>
+          <span><small>Crazy Prompts</small><strong id="crazyDrops">19</strong></span>
+        </div>
+      </div>
+
+      <div class="node-card slogan-card">Keep the chaos flowing</div>
     </aside>
   </main>
 
+  <section class="lower-grid">
+    <section class="proof-panel" id="proof">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Real Pulls · Real Outputs · Real Archive</p>
+          <h2>Proof of Work</h2>
+        </div>
+        <a href="#visuals">View all</a>
+      </div>
+      <div class="proof-cards">
+        <article>
+          <img src="assets/logo/ffooc-icon.jpg" alt="" />
+          <p>Latest Pull</p>
+          <strong>Crazy Prompt</strong>
+          <span>Toxic dragon riding a bass wave in space</span>
+        </article>
+        <article>
+          <img src="assets/visuals/operator-bass-core.webp" alt="" />
+          <p>Best Visual</p>
+          <strong>Operator Bass Core</strong>
+          <span>Neon device · prompt machine core</span>
+        </article>
+        <article>
+          <img src="assets/logo/ffooc-logo-splatter.jpg" alt="" />
+          <p>Brand Drop</p>
+          <strong>FissaFissa Main Wall</strong>
+          <span>Graffiti camo · live asset</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="battle-panel">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">Vote · Decide · Create Together</p>
+          <h2>Community Battle</h2>
+        </div>
+        <span>Ends in: 2d 14h</span>
+      </div>
+      <div class="battle-options">
+        <article>
+          <img src="assets/logo/ffooc-logo-splatter.jpg" alt="" />
+          <button>Vote A</button>
+        </article>
+        <article>
+          <img src="assets/visuals/operator-bass-core.webp" alt="" />
+          <button>Vote B</button>
+        </article>
+        <article>
+          <img src="assets/logo/ffooc-icon.jpg" alt="" />
+          <button>Vote C</button>
+        </article>
+      </div>
+      <p class="leader-line">Current leader: B - Operator Bass Core</p>
+    </section>
+  </section>
+
+  <section class="music-panel" id="music">
+    <div class="section-header">
+      <p class="eyebrow">Live Track</p>
+      <h2>Music Lab</h2>
+    </div>
+    <div class="tracks-container" id="tracksContainer"></div>
+  </section>
+
   <section class="visuals-section" id="visuals">
-    <div class="section-header wide">
-      <p class="eyebrow">AI-GENERATED VISUALS</p>
-      <h3>Visual Worlds</h3>
-      <p class="section-copy">Fortlaufende Bildwelten aus eigenen KI-Visuals. Kein Voting, kein Login, keine Nutzeruploads.</p>
+    <div class="section-header">
+      <p class="eyebrow">AI-Generated Visuals</p>
+      <h2>Visual Worlds</h2>
+      <p class="section-copy">Logo, Cover, Icon und Maschinenwelt als zusammenhaengende Brand-Basis fuer den Live-Auftritt.</p>
     </div>
     <div class="visual-grid" id="visualGrid"></div>
   </section>
 
-  <section class="info-strip" id="about">
+  <section class="operation-strip" id="rights">
     <article>
-      <h4>What is this?</h4>
-      <p>FissaFissa Out of Control verbindet KI-generierte Tracks, Visuals und eine Prompt-Slotmachine zu einer einfachen, lauten Website.</p>
+      <h3>Mobile Ready</h3>
+      <p>Auf dem Handy steht die Maschine direkt im Fokus: ziehen, Prompt kopieren, weiterarbeiten.</p>
     </article>
     <article>
-      <h4>How it works</h4>
-      <p>JSON-Daten steuern Prompts, Tracks und Visuals. Keine Datenbank. Kein Login. Kein User-Input.</p>
+      <h3>Static & Fast</h3>
+      <p>GitHub Pages, JSON-Daten, keine Datenbank, kein Login, keine Nutzeruploads.</p>
     </article>
-    <article id="rights">
-      <h4>Rights / License</h4>
-      <p>Tracks werden als AI-generated markiert. Wenn Zertifikate vorhanden sind, werden sie direkt an der Track-Karte verlinkt.</p>
+    <article>
+      <h3>Rights</h3>
+      <p>Track und Visuals sind als AI-assisted / owner-provided markiert. Zertifikate koennen spaeter direkt an die Track-Karte.</p>
     </article>
   </section>
 
   <footer class="footer">
     <span>© 2026 FissaFissa Out of Control</span>
-    <span>AI-generated / AI-assisted content. Mensch bleibt Owner. KI bleibt Werkzeug.</span>
+    <span>Be loud. Be creative. Be you. Out of control.</span>
   </footer>
 
   <script src="script.js"></script>

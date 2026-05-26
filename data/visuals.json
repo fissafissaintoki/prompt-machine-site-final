@@ -1,50 +1,50 @@
 [
   {
     "id": "visual-01",
+    "title": "FissaFissa Main Wall",
+    "world": "Brand Core",
+    "style": "Graffiti Camo",
+    "image": "assets/logo/ffooc-logo-splatter.jpg",
+    "description": "Grosses FissaFissa-Graffiti als Live-Branding."
+  },
+  {
+    "id": "visual-02",
+    "title": "FF Camo Mark",
+    "world": "Brand Core",
+    "style": "Square Icon",
+    "image": "assets/logo/ffooc-icon.jpg",
+    "description": "Quadratisches FF-Zeichen fuer Icon, Avatar und Visual-Karte."
+  },
+  {
+    "id": "visual-03",
     "title": "Operator Bass Core",
     "world": "Prompt Machine",
     "style": "Neon Device",
     "image": "assets/visuals/operator-bass-core.webp",
-    "description": "Neon-gruener Maschinenkern als erstes Live-Visual."
-  },
-  {
-    "id": "visual-02",
-    "title": "AI Logistics Lab",
-    "world": "Process AI",
-    "style": "Infographic",
-    "image": "",
-    "description": "Prozess, Robotik, Warehouse, AI."
-  },
-  {
-    "id": "visual-03",
-    "title": "Cyber Angel",
-    "world": "Cyber Angel Archive",
-    "style": "Cinematic",
-    "image": "",
-    "description": "Golden cyber form, AI mythos."
+    "description": "Neon-gruener Maschinenkern als Visual-Kontrast."
   },
   {
     "id": "visual-04",
-    "title": "Dark Glitch",
-    "world": "Dark Operator Zone",
-    "style": "Glitch Portrait",
-    "image": "",
-    "description": "Dunkles Operator-Portrait mit Realweltbruch."
+    "title": "Clean Logo Plate",
+    "world": "Brand Core",
+    "style": "Black Logo",
+    "image": "assets/logo/ffooc-logo-clean.jpg",
+    "description": "Ruhigere Logo-Fassung fuer Header und Social Preview."
   },
   {
     "id": "visual-05",
-    "title": "Cyber Surf",
-    "world": "Fantasy Apocalypse",
-    "style": "Surreal",
-    "image": "",
-    "description": "Toxic wave, AI chaos, visual drop."
+    "title": "Splatter Cut",
+    "world": "Brand Core",
+    "style": "PNG Logo",
+    "image": "assets/logo/ffooc-logo-splatter.png",
+    "description": "Scharfe Logo-Variante aus dem finalen Graffiti-Set."
   },
   {
     "id": "visual-06",
-    "title": "Glitch Meme",
-    "world": "Glitch Reality",
-    "style": "Meme Visual",
-    "image": "",
-    "description": "Humorvoller Glitch-Abriss."
+    "title": "Archive Banner",
+    "world": "Brand Core",
+    "style": "Compact Banner",
+    "image": "assets/covers/ffooc-banner.webp",
+    "description": "Kleines altes Banner als Archiv-Asset."
   }
 ]
