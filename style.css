@@ -902,13 +902,13 @@ audio {
   }
 
   .top-nav {
-    height: 76px;
+    height: 64px;
     display: block;
     padding-right: 60px;
   }
 
   .top-logo img {
-    height: 76px;
+    height: 64px;
   }
 
   .desktop-nav,
@@ -945,7 +945,7 @@ audio {
   }
 
   .slot {
-    min-height: 108px;
+    min-height: 88px;
     gap: 8px;
     padding: 8px;
   }
@@ -957,9 +957,20 @@ audio {
     display: none;
   }
 
+  .output-window {
+    min-height: 112px;
+    max-height: 138px;
+    overflow-y: auto;
+  }
+
   .output-content {
-    font-size: 15px;
+    font-size: 13px;
     text-align: left;
+  }
+
+  .action-btn {
+    padding: 11px 10px;
+    font-size: 20px;
   }
 
   .intro-panel {
