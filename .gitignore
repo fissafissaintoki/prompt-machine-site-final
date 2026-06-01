@@ -1,1 +1,20 @@
+# Screenshots & reference images
 prompt-machine-*.png
+
+# Backups
+*.backup.html
+*.backup.js
+*.backup.css
+_backup_*/
+
+# Dev docs
+CLAUDE.md
+DEPLOY.md
+README.md
+
+# Not referenced by production code
+data/
+assets/
+
+# Legacy scripts
+script.js

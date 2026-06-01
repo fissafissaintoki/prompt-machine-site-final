@@ -1,239 +1,80 @@
-<!DOCTYPE html>
-<html lang="de">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FissaFissa Out of Control — The Prompt Machine</title>
-  <meta name="description" content="FissaFissa Out of Control: The Prompt Machine, AI Music Lab, Visual Worlds and Proof of Work." />
-  <meta name="theme-color" content="#030403" />
-  <meta property="og:title" content="FissaFissa Out of Control — The Prompt Machine" />
-  <meta property="og:description" content="Pull the lever. Get Picture, Mureka or Crazy Prompt." />
-  <meta property="og:image" content="assets/reference/reference-dashboard.png" />
-  <link rel="icon" href="assets/logo/ffooc-icon.jpg" />
-  <link rel="stylesheet" href="style.css?v=reference-exact-1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prompterator - Out of Control</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="noise"></div>
-  <div class="scanlines"></div>
-
-  <button class="hamburger" id="hamburgerBtn" aria-label="Menü öffnen">
-    <span></span><span></span><span></span>
-  </button>
-
-  <nav class="mobile-menu" id="mobileMenu">
-    <button class="close-menu" id="closeMenuBtn" aria-label="Menü schließen">×</button>
-    <a class="menu-link" href="#home">Home</a>
-    <a class="menu-link" href="#machine">The Prompt Machine</a>
-    <a class="menu-link" href="#music">Music Lab</a>
-    <a class="menu-link" href="#visuals">Visual Worlds</a>
-    <a class="menu-link" href="#battle">Community Battle</a>
-    <a class="menu-link" href="#proof">Proof of Work</a>
-    <a class="menu-link" href="#about">About</a>
-  </nav>
-
-  <div class="app-frame" id="home">
-    <img class="exact-reference" src="assets/reference/reference-dashboard.png?v=reference-exact-1" alt="" aria-hidden="true" />
-
-    <header class="top-nav">
-      <a class="top-logo" href="#machine" aria-label="FissaFissa Out of Control">
-        <img src="assets/logo/ffooc-logo-clean.jpg" alt="FissaFissa Out of Control" />
-      </a>
-      <nav class="desktop-nav" aria-label="Hauptnavigation">
-        <a class="active" href="#home">Home</a>
-        <a href="#machine">The Prompt Machine</a>
-        <a href="#music">Music Lab</a>
-        <a href="#visuals">Visual Worlds</a>
-        <a href="#battle">Community Battle</a>
-        <a href="#proof">Proof of Work</a>
-        <a href="#about">About</a>
-      </nav>
-      <div class="social-strip" aria-label="Community">
-        <span>DC</span>
-        <span>IG</span>
-      </div>
+  <main class="shell" aria-label="Prompterator">
+    <header class="masthead">
+      <p class="eyebrow">OUT OF CONTROL</p>
+      <h1>PROMPTERATOR</h1>
     </header>
 
-    <main class="hero-dashboard">
-      <section class="intro-panel" id="about">
-        <img class="brand-mark" src="assets/logo/ffooc-logo-splatter.jpg" alt="FissaFissa Out of Control Logo" />
-        <p class="labline">AI Music & Visual Lab</p>
-        <h1>
-          <span>The Prompt</span>
-          <strong>Machine</strong>
-        </h1>
-        <p class="intro-kicker">Pull the lever.<br>Get <b>Picture</b>, <em>Mureka</em><br>or <mark>Crazy Prompt</mark>.</p>
-        <article class="what-card">
-          <h2>What is this?</h2>
-          <p>The Prompt Machine gives you random high-quality AI outputs. No input. No settings. Just pull. Copy. Create.</p>
-          <strong>Pure chaos. Pure creativity.</strong>
-        </article>
-      </section>
+    <section class="machine" id="machine">
+      <div class="machine__left">
+        <nav class="mode-panel" aria-label="Mode select">
+          <button class="mode-button" type="button" data-mode="mureka">
+            <span>MUREKA</span>
+            <small>Music Mode</small>
+          </button>
+          <button class="mode-button is-active" type="button" data-mode="visual">
+            <span>VISUAL STYLE</span>
+            <small>Image Mode</small>
+          </button>
+          <button class="mode-button" type="button" data-mode="crazy">
+            <span>TOTALLY CRAZY</span>
+            <small>Chaos Mode</small>
+          </button>
+        </nav>
 
-      <section class="machine-panel" id="machine" aria-label="The Prompt Machine">
-        <div class="machine-shell">
-          <button class="machine-topline" id="leverBtn">↓ Pull the lever ↓</button>
-          <div class="slot-machine">
-            <div class="slot">
-              <span class="slot-symbol">▧</span>
-              <span id="slot1">Picture</span>
+        <section class="slots" aria-label="Prompt slots">
+          <article class="slot" data-slot="0">
+            <div class="slot__label" id="slotLabel0">Subject</div>
+            <div class="slot__window">
+              <div class="slot__value" id="slotValue0">...</div>
             </div>
-            <div class="slot">
-              <span class="slot-symbol">♪</span>
-              <span id="slot2">Mureka</span>
-            </div>
-            <div class="slot">
-              <span class="slot-symbol">☠</span>
-              <span id="slot3">Crazy Prompt</span>
-            </div>
-          </div>
-          <div class="machine-guts">
-            <div class="output-window">
-              <div class="output-title">Output Window</div>
-              <div class="output-content" id="outputContent">
-                <p class="output-placeholder">Cyberpunk warehouse rave, flooded floor, lasers, bass vibes, robots dancing</p>
-              </div>
-            </div>
-            <div class="output-actions">
-              <button class="action-btn" id="copyBtn" disabled>⧉ Copy</button>
-              <button class="action-btn danger" id="deleteBtn" disabled>⌫ Delete</button>
-            </div>
-          </div>
-        </div>
-        <div class="lever-rail" aria-hidden="true"><span></span></div>
-      </section>
-
-      <aside class="control-stack">
-        <section class="control-card ai-node">
-          <div>
-            <h2>AI Control Node</h2>
-            <p>Status:</p>
-            <strong>Online <span></span></strong>
-          </div>
-          <img src="assets/logo/ffooc-icon.jpg" alt="" />
-        </section>
-
-        <section class="control-grid">
-          <article class="control-card">
-            <p>Chaos Level</p>
-            <strong id="chaosValue">87%</strong>
-            <div class="chaos-bars" id="chaosBars">
-              <span></span><span></span><span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span><span></span><span></span>
-            </div>
+            <button class="spin-button" type="button" data-spin="0">SPIN</button>
           </article>
-          <article class="control-card">
-            <p>Last Pull</p>
-            <strong class="orange" id="lastPull">Mureka</strong>
-            <span class="music-note">♪</span>
+
+          <article class="slot" data-slot="1">
+            <div class="slot__label" id="slotLabel1">Style</div>
+            <div class="slot__window">
+              <div class="slot__value" id="slotValue1">...</div>
+            </div>
+            <button class="spin-button" type="button" data-spin="1">SPIN</button>
+          </article>
+
+          <article class="slot" data-slot="2">
+            <div class="slot__label" id="slotLabel2">Effect</div>
+            <div class="slot__window">
+              <div class="slot__value" id="slotValue2">...</div>
+            </div>
+            <button class="spin-button" type="button" data-spin="2">SPIN</button>
           </article>
         </section>
-
-        <section class="control-card drops-card">
-          <p>Today's Drops</p>
-          <div class="drop-stats">
-            <span><small>Picture</small><strong id="pictureDrops">12</strong></span>
-            <span><small>Mureka</small><strong id="murekaDrops">7</strong></span>
-            <span><small>Crazy Prompts</small><strong id="crazyDrops">19</strong></span>
-          </div>
-        </section>
-
-        <section class="control-card track-card" id="music">
-          <div class="track-mini-cover"></div>
-          <div class="track-copy">
-            <p>Music Lab</p>
-            <h2>Out of Control</h2>
-            <audio controls preload="metadata" src="assets/tracks/out_of_control.mp3"></audio>
-          </div>
-        </section>
-
-        <section class="control-card stripe-card">Keep the chaos flowing</section>
-      </aside>
-    </main>
-
-    <section class="work-row">
-      <section class="proof-panel" id="proof">
-        <div class="panel-head">
-          <div>
-            <h2>Proof of Work</h2>
-            <p>Real pulls. Real outputs. Real archive.</p>
-          </div>
-          <a href="#visuals">View all</a>
-        </div>
-        <div class="proof-grid">
-          <article>
-            <img src="assets/reference/prompt-machine-reference.jpg" alt="" />
-            <small>Latest Pull</small>
-            <strong>Crazy Prompt</strong>
-            <span>Toxic dragon riding a bass wave in space</span>
-          </article>
-          <article>
-            <img src="assets/visuals/operator-bass-core.webp" alt="" />
-            <small>Best Visual</small>
-            <strong>Green Storm Operator</strong>
-            <span>Picture Prompt</span>
-          </article>
-          <article>
-            <img src="assets/logo/ffooc-logo-splatter.jpg" alt="" />
-            <small>Mureka Candidate</small>
-            <strong>Out of Control</strong>
-            <span>Track Prompt</span>
-          </article>
-          <article>
-            <img src="assets/logo/ffooc-icon.jpg" alt="" />
-            <small>Brand Archive</small>
-            <strong>FissaFissa Wall</strong>
-            <span>Visual System</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="battle-panel" id="battle">
-        <div class="panel-head">
-          <div>
-            <h2>Community Battle</h2>
-            <p>Vote. Decide. Create together.</p>
-          </div>
-          <span>Ends in: 2d 14h 33m</span>
-        </div>
-        <div class="battle-grid">
-          <article>
-            <b>A</b>
-            <img src="assets/logo/ffooc-logo-splatter.jpg" alt="" />
-            <button>Vote A</button>
-          </article>
-          <article>
-            <b>B</b>
-            <img src="assets/visuals/operator-bass-core.webp" alt="" />
-            <button>Vote B</button>
-          </article>
-          <article>
-            <b>C</b>
-            <img src="assets/logo/ffooc-icon.jpg" alt="" />
-            <button>Vote C</button>
-          </article>
-        </div>
-        <p class="leader-line">Current leader: B - Glitch Reality (57%)</p>
-      </section>
-    </section>
-
-    <section class="visuals-strip" id="visuals">
-      <div class="panel-head">
-        <div>
-          <h2>Visual Worlds</h2>
-          <p>Brand assets, machine visuals and cover energy.</p>
-        </div>
       </div>
-      <div class="visual-grid" id="visualGrid"></div>
+
+      <aside class="trigger-panel" aria-label="Main trigger">
+        <button class="orb" id="unleashButton" type="button">
+          <span>CLICK TO</span>
+          <strong>UNLEASH</strong>
+        </button>
+      </aside>
     </section>
 
-    <footer class="footer">
-      <span>Be loud.</span>
-      <span>Be creative.</span>
-      <span>Be you.</span>
-      <span>Out of control.</span>
-    </footer>
-  </div>
+    <section class="prompt-panel" aria-label="Generated prompt">
+      <textarea id="promptOutput" spellcheck="false" readonly aria-label="Prompt output"></textarea>
+      <div class="prompt-actions">
+        <button class="action-button copy" id="copyButton" type="button">COPY</button>
+        <button class="action-button delete" id="deleteButton" type="button">DELETE</button>
+      </div>
+    </section>
+  </main>
 
-  <script src="script.js?v=reference-exact-1"></script>
+  <div class="toast" id="toast" role="status" aria-live="polite">COPIED</div>
+  <script src="app.js"></script>
 </body>
 </html>
