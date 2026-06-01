@@ -1,0 +1,7 @@
+{
+  "name": "prompterator",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  }
+}
